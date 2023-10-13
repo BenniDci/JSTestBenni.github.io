@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benni Js Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #generateJokeButton {
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #catImage {
+            max-width: 100%;
+            display: none;
+        }
+        #colorButton{
+            background-color: #191b1c;
+            height: 50px;
+            width: 200px;
+            color: limegreen;
+            cursor: cell;
+            border: aliceblue 1px thick;
+        }
+        #colorButton:hover{
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Benni JavaScript Test Template</h1>
+    <p>Click to get some Jokes</p>
+
+    <button id="generateJokeButton">Generate a Joke</button>
+    <div id="joke-container"></div>
+    <br>
+    <p>Change the Color of the Background</p>
+    <button id="colorButton">Random Background Color</button>
+    <br>
+    <br>
+    <p>Reload the Page for some Random Cat Pic’s</p>
+    <br>
+    <img id="catImage" src="" alt="Random Cat Image">
+    <br>
+
+    <script>
+        // Function to generate random jokes
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "How does a computer get drunk? It takes screenshots!",
+            "Parallel lines have so much in common. It's a shame they'll never meet.",
+            "I used to play piano by ear, but now I use my hands.",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised."
+        ];
+
+        function generateRandomJoke() {
+            const jokeContainer = document.getElementById("joke-container");
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]; //The length is added to get the full line of the String
+            jokeContainer.innerHTML = `<p>${randomJoke}</p>`;
+        }
+
+        const jokeButton = document.getElementById("generateJokeButton");
+        jokeButton.addEventListener("click", generateRandomJoke); //Button functionality
+
+        // Function for Random Background Color
+
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF"; 
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)]; //The range is 16 based on what we typed in before
+            }
+            return color;
+        }
+
+        const changeColorButton = document.getElementById("colorButton");
+        colorButton.addEventListener("click", function () {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+
+        // Function to display a random cat image
+        async function displayRandomCatImage() {
+            const catImage = document.getElementById("catImage");
+            try {
+                const response = await fetch('https://api.thecatapi.com/v1/images/search');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`); 
+                }
+                const data = await response.json();
+                catImage.src = data[0].url;
+                catImage.style.display = 'block'; 
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+         // Call the displayRandomCatImage function to show a cat image on page load
+         displayRandomCatImage();
+        
+
+       
+    </script>
+</body>
+</html>
