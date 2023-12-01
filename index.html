@@ -4,74 +4,149 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Benni Js Test</title>
-        <style>
+        <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin-top: 10px;
+        }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f2f2f2;
+            display:block;
         }
-        #generateJokeButton {
+        h1 {
+            color: #FF5733;
+            font-size: 36px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            background-color: #191b1c46;
+            border-radius: 50px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        #generateJokeButton:hover {
+            padding: 10px 20px;
+            color: rgb(148, 158, 57)55, 255, 255);
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+        
+        #catImage {
+            justify-self: center;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto; /* Add this line to center the image */
+        }
+        #colorButton:hover{
+            height: 50px;
+            width: 200px;
+            color: limegreen;
+            cursor: cell;
+            border: aliceblue 1px thick;
+            font-size: 16px;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+        #colorButton:hover{
+            transform: scale(1.1);
+        }
+        .bigbox {
+            height: 250px;
+            border: solid rgba(0, 0, 0, 0) 2px;
+            background-color: hsla(0, 0%, 100%, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        button{
             padding: 10px 20px;
             background-color: #FF5733;
             color: white;
             border: none;
             cursor: pointer;
             margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
         }
-        #catImage {
-            max-width: 100%;
-            display: none;
+        #reloadbutton:hover{
+            transform: scale(1.1);
         }
-        #colorButton{
-            background-color: #191b1c;
-            height: 50px;
-            width: 200px;
-            color: limegreen;
-            cursor: cell;
-            border: aliceblue 1px thick;
+        #scrolltop:hover{
+            transform: scale(1.1);
+            }
+        a {
+            color: #FF5733;
+            text-decoration: none;
+            font-size: 18px;
         }
-        #colorButton:hover{
-            transform: scale(1.5);
-        }
-        </style>
+        
+    </style>
     </head>
 
     <body>
+        <header>
 
-    <h1>Benni JavaScript Test Template</h1>
-    <p>Click to get some Jokes</p>
+            <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Benni JavaScript Test Template</h1>
+        </header>
+        <main>
+            <!-- Joke Button + empty div to fill with script dynamicly-->
+            <button id="generateJokeButton">Generate a Joke</button>
+            <div id="joke-container" style="background-color: #f2f2f2;"></div>
+            <br>
+            <!-- Random Color Button -->
+            <button id="colorButton">Random Background Color</button>
+            <br>
+            <br>
+            <!-- Refresh Button -->
+            <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and GIF's</button>
+            <!-- Random cat Img -->
+            <img id="catImage" src="" alt="Random Cat Image">
+            <!-- <a href="https://bennidci.github.io/">Link to first WP</a> -->
+        </main>
 
-    <button id="generateJokeButton">Generate a Joke</button>
-    <div id="joke-container"></div>
-    <br>
-    <p>Change the Color of the Background</p>
-    <button id="colorButton">Random Background Color</button>
-    <br>
-    <br>
-    <p>Reload the Page for some Random Cat Pic’s</p>
-    <br>
-    <button onClick="window.location.reload();">Refresh Page</button>
-    <br>
-    <img id="catImage" src="" alt="Random Cat Image">
-    <br>
-
+        <footer>
+            <!-- just to fill -->
+            <div class="bigbox"></div> 
+            <!-- scroll to top button -->
+            <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Scroll to top</button>  
+        </footer>
+    
     <script>
         // Function to generate random jokes
+
         const jokes = [
             "Why don't scientists trust atoms? Because they make up everything!",
             "How does a computer get drunk? It takes screenshots!",
             "Parallel lines have so much in common. It's a shame they'll never meet.",
             "I used to play piano by ear, but now I use my hands.",
-            "I told my wife she was drawing her eyebrows too high. She looked surprised."
+            "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "What do you call a fake noodle? An impasta!",
+            "What do you call a cow during an earthquake? A milkshake!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don't eggs tell jokes? Because they might crack up!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "What do you call a deer with no eyes? No idea!",
         ];
 
         function generateRandomJoke() {
             const jokeContainer = document.getElementById("joke-container");
-            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]; //The length is added to get the full line of the String
+            const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
             jokeContainer.innerHTML = `<p>${randomJoke}</p>`;
         }
 
         const jokeButton = document.getElementById("generateJokeButton");
-        jokeButton.addEventListener("click", generateRandomJoke); //Button functionality
+        jokeButton.addEventListener("click", generateRandomJoke);
 
         // Function for Random Background Color
 
@@ -79,7 +154,8 @@
             const letters = "0123456789ABCDEF"; 
             let color = "#";
             for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)]; //The range is 16 based on what we typed in before
+                color += letters[Math.floor(Math.random() * 16)]; 
+                // * 16 to access the full hex scale
             }
             return color;
         }
@@ -91,6 +167,7 @@
 
 
         // Function to display a random cat image
+
         async function displayRandomCatImage() {
             const catImage = document.getElementById("catImage");
             try {
@@ -108,6 +185,8 @@
          // Call the displayRandomCatImage function to show a cat image on page load
          displayRandomCatImage();
         
+
+
 
        
     </script>
