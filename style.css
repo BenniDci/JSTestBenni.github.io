@@ -40,7 +40,7 @@ p {
 #colorButton:hover{
     height: 50px;
     width: 200px;
-    color: limegreen;
+    color: rgb(189, 197, 189);
     cursor: cell;
     border: aliceblue 1px thick;
     font-size: 16px;
