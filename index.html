@@ -1,43 +1,49 @@
 <!DOCTYPE html>
-<html lang="en"> 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Benni Js Test</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="en">
 
-    <body>
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benni Js Test</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- icon toolkit -->
+        <script src="https://kit.fontawesome.com/daf95c2c4c.js" crossorigin="anonymous"></script>
+</head>
 
-            <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Benni JavaScript Test Template</h1>
-        </header>
-        <main>
-            <!-- Joke Button + empty div to fill with script dynamicly-->
-            <button id="generateJokeButton">Generate a Joke</button>
-            <div id="joke-container" style="background-color: #f2f2f2;font:900"></div>
-            <br>
-            <!-- Random Color Button -->
-            <button id="colorButton">Random Background Color</button>
-            <br>
-            <br>
-            <!-- Refresh Button -->
-            <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and GIF's</button>
-            <!-- Random cat Img -->
-            <img id="catImage" src="" alt="Random Cat Image">
-            <!-- <a href="https://bennidci.github.io/">Link to first WP</a> -->
-        </main>
+<body>
+    <header>
 
-        <footer>
-            <!-- just to fill -->
-            <div class="bigbox"></div> 
-            <!-- Event-Listener-Test-Button -->
-            <button id="Event">Click here!</button>
-            <br>
-            <!-- scroll to top button -->
-            <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Scroll to top</button>  
-        </footer>
-    
+        <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Benni JavaScript Test Template</h1>
+    </header>
+    <main>
+        <!-- Joke Button + empty div to fill with script dynamicly-->
+        <button id="generateJokeButton">Generate a Joke</button>
+        <div id="joke-container" style="background-color: #f2f2f2;font:900"></div>
+        <br>
+        <!-- Random Color Button -->
+        <button id="colorButton">Random Background Color</button>
+        <br>
+        <br>
+        <!-- Refresh Button -->
+        <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and
+            GIF's</button>
+        <!-- Random cat Img -->
+        <img id="catImage" src="" alt="Random Cat Image">
+        <!-- <a href="https://bennidci.github.io/">Link to first WP</a> -->
+    </main>
+
+    <footer>
+        <!-- just to fill -->
+        <div class="bigbox"></div>
+        <!-- Event-Listener-Test-Button -->
+        <button id="Event">Click here!</button>
+        <br>
+        <!-- scroll to top button -->
+
+            <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fa-solid fa-arrow-up"></i> Scroll to Top</button>
+            
+    </footer>
+
     <script>
         // Function to generate random jokes
 
@@ -67,10 +73,10 @@
         // Function for Random Background Color
 
         function getRandomColor() {
-            const letters = "0123456789ABCDEF"; 
+            const letters = "0123456789ABCDEF";
             let color = "#";
             for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)]; 
+                color += letters[Math.floor(Math.random() * 16)];
                 // * 16 to access the full hex scale
             }
             return color;
@@ -89,27 +95,28 @@
             try {
                 const response = await fetch('https://api.thecatapi.com/v1/images/search');
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`); 
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const data = await response.json();
                 catImage.src = data[0].url;
-                catImage.style.display = 'block'; 
+                catImage.style.display = 'block';
             } catch (error) {
                 console.error('Error:', error);
             }
         }
-         // Call the displayRandomCatImage function to show a cat image on page load
-         displayRandomCatImage();
+        // Call the displayRandomCatImage function to show a cat image on page load
+        displayRandomCatImage();
 
         const Event = document.getElementById("Event");
         Event.addEventListener("click", function () {
-        alert("You clicked the button!");
+            alert("You clicked the button!");
         });
+
+
         
 
 
-
-       
     </script>
-    </body>
+</body>
+
 </html>

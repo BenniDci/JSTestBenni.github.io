@@ -79,10 +79,23 @@ button {
 #scrolltop {
   position: sticky;
   bottom: 2.5px;
-  right: 2.5px;
+    right: 2.5px;
 }
 a {
   color: #ff5733;
   text-decoration: none;
   font-size: 18px;
+}
+#joke-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #191b1c46;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
