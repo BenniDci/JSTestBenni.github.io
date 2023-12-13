@@ -31,6 +31,9 @@
         <footer>
             <!-- just to fill -->
             <div class="bigbox"></div> 
+            <!-- Event-Listener-Test-Button -->
+            <button id="Event">Click here!</button>
+            <br>
             <!-- scroll to top button -->
             <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Scroll to top</button>  
         </footer>
@@ -97,6 +100,11 @@
         }
          // Call the displayRandomCatImage function to show a cat image on page load
          displayRandomCatImage();
+
+        const Event = document.getElementById("Event");
+        Event.addEventListener("click", function () {
+        alert("You clicked the button!");
+        });
         
 
 

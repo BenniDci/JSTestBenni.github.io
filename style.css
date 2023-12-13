@@ -8,7 +8,7 @@ body {
     display:block;
 }
 h1 {
-    color: #FF5733;
+    color: #4133ff;
     font-size: 36px;
     margin-top: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -22,7 +22,7 @@ p {
 }
 #generateJokeButton:hover {
     padding: 10px 20px;
-    color: rgb(148, 158, 57)55, 255, 255);
+    color: rgb(148, 158, 57);
     border: none;
     cursor: pointer;
     margin: 10px;
@@ -62,7 +62,7 @@ p {
 
 button{
     padding: 10px 20px;
-    background-color: #FF5733;
+    background-color: #4133ff;
     color: white;
     border: none;
     cursor: pointer;
@@ -75,6 +75,8 @@ button{
 }
 #scrolltop:hover{
     transform: scale(1.1);
+    position: sticky;
+    bottom: 0px;
     }
 a {
     color: #FF5733;
