@@ -1,85 +1,88 @@
-*{
-    margin-top: 10px;
+* {
+  margin-top: 10px;
 }
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
-    display:block;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+  display: block;
 }
 h1 {
-    color: #4133ff;
-    font-size: 36px;
-    margin-top: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    background-color: #191b1c46;
-    border-radius: 50px;
+  color: #4133ff;
+  font-size: 36px;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-color: #191b1c46;
+  border-radius: 50px;
 }
 p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 #generateJokeButton:hover {
-    padding: 10px 20px;
-    color: rgb(148, 158, 57);
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    transform: scale(1.1);
+  padding: 10px 20px;
+  color: rgb(148, 158, 57);
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  transform: scale(1.1);
 }
 
 #catImage {
-    justify-self: center;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto; /* Add this line to center the image */
+  justify-self: center;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto; /* Add this line to center the image */
 }
-#colorButton:hover{
-    height: 50px;
-    width: 200px;
-    cursor: cell;
-    color: lime;
-    border: aliceblue 1px thick;
-    font-size: 16px;
-    border-radius: 5px;
-    transform: scale(1.1);
+#colorButton:hover {
+  height: 50px;
+  width: 200px;
+  cursor: cell;
+  color: lime;
+  border: aliceblue 1px thick;
+  font-size: 16px;
+  border-radius: 5px;
+  transform: scale(1.1);
 }
-#colorButton:hover{
-    transform: scale(1.1);
+#colorButton:hover {
+  transform: scale(1.1);
 }
 .bigbox {
-    height: 250px;
-    border: solid rgba(0, 0, 0, 0) 2px;
-    background-color: hsla(0, 0%, 100%, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
+  height: 250px;
+  border: solid rgba(0, 0, 0, 0) 2px;
+  background-color: hsla(0, 0%, 100%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }
 
-button{
-    padding: 10px 20px;
-    background-color: #4133ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+button {
+  padding: 10px 20px;
+  background-color: #4133ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 5px;
 }
-#reloadbutton:hover{
-    transform: scale(1.1);
+#reloadbutton:hover {
+  transform: scale(1.1);
 }
-#scrolltop:hover{
-    transform: scale(1.1);
-    position: sticky;
-    bottom: 0px;
-    }
+#scrolltop:hover {
+  transform: scale(1.1);
+}
+#scrolltop {
+  position: sticky;
+  bottom: 2.5px;
+  right: 2.5px;
+}
 a {
-    color: #FF5733;
-    text-decoration: none;
-    font-size: 18px;
+  color: #ff5733;
+  text-decoration: none;
+  font-size: 18px;
 }
