@@ -1,6 +1,7 @@
 * {
   margin-top: 10px;
 }
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -21,34 +22,29 @@ p {
   margin-bottom: 20px;
 }
 #generateJokeButton:hover {
-  padding: 10px 20px;
-  color: rgb(148, 158, 57);
-  border: none;
   cursor: pointer;
   margin: 10px;
   font-size: 16px;
   border-radius: 5px;
   transform: scale(1.1);
+  background-color: blue;
 }
 
 #catImage {
   justify-self: center;
-  max-width: 100%;
+  max-width: 90%;
   display: block;
   margin: 0 auto; /* Add this line to center the image */
 }
 #colorButton:hover {
-  height: 50px;
-  width: 200px;
-  cursor: cell;
-  color: lime;
-  border: aliceblue 1px thick;
+  cursor: pointer;
+  background-color: blue;
   font-size: 16px;
   border-radius: 5px;
-  transform: scale(1.1);
 }
 #colorButton:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: blue;
 }
 .bigbox {
   height: 250px;
@@ -71,31 +67,73 @@ button {
   border-radius: 5px;
 }
 #reloadbutton:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: blue;
 }
 #scrolltop:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: blue;
 }
 #scrolltop {
   position: sticky;
   bottom: 2.5px;
-    right: 2.5px;
+  right: 2.5px;
 }
 a {
   color: #ff5733;
   text-decoration: none;
   font-size: 18px;
 }
-#joke-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 50%;
-    height: 100%;
-    border-radius: 10px;
-    background-color: #191b1c46;
-    padding: 20px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+#joke-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #191b1c46;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.calculator {
+  width: 300px;
+  margin: 50px auto;
+  border: 3px solid #5e5a5a;
+  border-radius: 2.5%;
+  padding: 20px;
+  background-color: rgba(109, 108, 100, 0.744);
+}
+
+.display {
+  border: 1px solid #ddd;
+  background-color: azure;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: left;
+  width: 208px;
+}
+.display:hover {
+   background-color: rgb(223, 223, 217);
+}
+.row {
+  display: flex;
+}
+
+.button {
+  flex: 1;
+  padding: 10px;
+  margin: 4px;
+  cursor: pointer;
+}
+.button:hover {
+  color: yellowgreen;
+  scale: 1.025;
+}
+.displayRow{
+  display: flex;
+}
+#operator{
+  flex:1
 }

@@ -7,7 +7,9 @@
     <title>Benni Js Test</title>
     <link rel="stylesheet" href="style.css">
     <!-- icon toolkit -->
-        <script src="https://kit.fontawesome.com/daf95c2c4c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://static.posters.cz/image/750/poster/rick-morty-ship-i35959.jpg"
+        type="image/x-icon">
+    <script src="https://kit.fontawesome.com/daf95c2c4c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,19 +19,56 @@
     </header>
     <main>
         <!-- Joke Button + empty div to fill with script dynamicly-->
-        <button id="generateJokeButton">Generate a Joke</button>
+        <button id="generateJokeButton">Generate a Random Joke</button>
         <div id="joke-container" style="background-color: #f2f2f2;font:900"></div>
         <br>
         <!-- Random Color Button -->
         <button id="colorButton">Random Background Color</button>
         <br>
+        <!-- Calculator -->
+        <div class="calculator">
+            <section class="displayRow">
+                <div class="display" id="display">0 </div><button class="backButton" id="operator"
+                    onclick="backButton('←')">←</button>
+            </section>
+
+            <div class="row">
+                <button class="button" onclick="Num('7')">7</button>
+                <button class="button" onclick="Num('8')">8</button>
+                <button class="button" onclick="Num('9')">9</button>
+                <button class="button" id="operator" onclick="Operator('/')">/</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="Num('4')">4</button>
+                <button class="button" onclick="Num('5')">5</button>
+                <button class="button" onclick="Num('6')">6</button>
+                <button class="button" id="operator" onclick="Operator('*')">*</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="Num('1')">1</button>
+                <button class="button" onclick="Num('2')">2</button>
+                <button class="button" onclick="Num('3')">3</button>
+                <button class="button" id="operator" onclick="Operator('-')">-</button>
+            </div>
+            <div class="row">
+                <button class="button" id="operator" onclick="clearDisplay()" rowspan="2">C</button>
+                <button class="button" onclick="Num('0')">0</button>
+                <button class="button" id="operator" onclick="Decimal('.')">.</button>
+                <button class="button" id="operator" onclick="Operator('+')">+</button>
+            </div>
+            <div class="row">
+                <button class="button" id="operator" onclick="Result()">=</button>
+            </div>
+        </div>
         <br>
-        <!-- Refresh Button -->
-        <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and
-            GIF's</button>
-        <!-- Random cat Img -->
-        <img id="catImage" src="" alt="Random Cat Image">
-        <!-- <a href="https://bennidci.github.io/">Link to first WP</a> -->
+        <div>
+            <!-- Refresh Button -->
+            <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and
+                GIF's</button>
+            <!-- Random cat Img -->
+            <img id="catImage" src="" alt="Random Cat Image">
+            <!-- <a href="https://bennidci.github.io/">Link to first Website</a> -->
+        </div>
     </main>
 
     <footer>
@@ -40,12 +79,15 @@
         <br>
         <!-- scroll to top button -->
 
-            <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i class="fa-solid fa-arrow-up"></i> Scroll to Top</button>
-            
+        <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i
+                class="fa-solid fa-arrow-up"></i> Scroll to Top</button>
+
     </footer>
 
     <script>
-        // Function to generate random jokes
+        // Function to generate some random jokes
+        // To do:
+        //  just play all jokes in a loop once
 
         const jokes = [
             "Why don't scientists trust atoms? Because they make up everything!",
@@ -53,10 +95,8 @@
             "Parallel lines have so much in common. It's a shame they'll never meet.",
             "I used to play piano by ear, but now I use my hands.",
             "I told my wife she was drawing her eyebrows too high. She looked surprised.",
-            "Why did the tomato turn red? Because it saw the salad dressing!",
-            "What do you call a fake noodle? An impasta!",
             "Why did the scarecrow win an award? Because he was outstanding in his field!",
-            "Why don't eggs tell jokes? Because they might crack up!",
+            "What do you call a fish with no eyes? A fsh!",
             "Why did the bicycle fall over? Because it was two-tired!",
             "What do you call a deer with no eyes? No idea!",
         ];
@@ -70,7 +110,11 @@
         const jokeButton = document.getElementById("generateJokeButton");
         jokeButton.addEventListener("click", generateRandomJoke);
 
+
+
         // Function for Random Background Color
+        // To do:
+        // dynamic color change with fitting contrast
 
         function getRandomColor() {
             const letters = "0123456789ABCDEF";
@@ -88,7 +132,11 @@
         });
 
 
+
+
         // Function to display a random cat image
+        // To do:
+        //  dinamicly change the size of the image to fit a given box
 
         async function displayRandomCatImage() {
             const catImage = document.getElementById("catImage");
@@ -104,19 +152,64 @@
                 console.error('Error:', error);
             }
         }
-        // Call the displayRandomCatImage function to show a cat image on page load
+
         displayRandomCatImage();
 
         const Event = document.getElementById("Event");
         Event.addEventListener("click", function () {
-            alert("You clicked the button!");
+            alert("You clicked the button! Ur a genius!");
         });
 
+        // Calculator
 
-        
+        let currentInput = '0';
 
+        function updateDisplay() {
+            document.getElementById('display').innerText = currentInput;
+        }
 
+        function Num(value) {
+            if (currentInput === '0') {
+                currentInput = value;
+            } else {
+                currentInput += value;
+            }
+            updateDisplay();
+        }
+
+        function Operator(operator) {
+            currentInput += ' ' + operator + ' ';
+            updateDisplay();
+        }
+
+        function Decimal() {
+            if (!currentInput.includes('.')) {
+                currentInput += '.';
+                updateDisplay();
+            }
+        }
+
+        function Result() {
+            try {
+                currentInput = eval(currentInput).toString();
+                updateDisplay();
+            } catch (error) {
+                currentInput = 'Error';
+                updateDisplay();
+            }
+        }
+
+        function clearDisplay() {
+            currentInput = '0';
+            updateDisplay();
+        }
+        function backButton() {
+            currentInput = currentInput.slice(0, -1);
+            updateDisplay();
+        }
     </script>
+
+
 </body>
 
 </html>
