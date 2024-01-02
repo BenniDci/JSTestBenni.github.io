@@ -21,17 +21,13 @@
         <!-- Joke Button + empty div to fill with script dynamicly-->
         <button id="generateJokeButton">Generate a Random Joke</button>
         <div id="joke-container" style="background-color: #f2f2f2;font:900"></div>
-        <br>
-        <!-- Random Color Button -->
-        <button id="colorButton">Random Background Color</button>
-        <br>
         <!-- Calculator -->
         <div class="calculator">
             <section class="displayRow">
                 <div class="display" id="display">0 </div><button class="backButton" id="operator"
-                    onclick="backButton('←')">←</button>
+                onclick="backButton('←')">←</button>
             </section>
-
+            
             <div class="row">
                 <button class="button" onclick="Num('7')">7</button>
                 <button class="button" onclick="Num('8')">8</button>
@@ -61,24 +57,35 @@
             </div>
         </div>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div>
+            <br>
+            <!-- Random Color Button -->
+            <button id="colorButton">Random Background Color</button>
+            <br>
             <!-- Refresh Button -->
             <button id="reloadbutton" onClick="window.location.reload();">Refresh Page for some random Cat Pic's and
                 GIF's</button>
-            <!-- Random cat Img -->
-            <img id="catImage" src="" alt="Random Cat Image">
-            <!-- <a href="https://bennidci.github.io/">Link to first Website</a> -->
-        </div>
-    </main>
-
-    <footer>
-        <!-- just to fill -->
-        <div class="bigbox"></div>
-        <!-- Event-Listener-Test-Button -->
-        <button id="Event">Click here!</button>
-        <br>
-        <!-- scroll to top button -->
-
+                <br>
+                <br>
+                <br>
+                <!-- Random cat Img -->
+                <img id="catImage" src="" alt="Random Cat Image">
+                <!-- <a href="https://bennidci.github.io/">Link to first Website</a> -->
+            </div>
+        </main>
+        
+        <footer>
+            <!-- just to fill -->
+            <div class="bigbox"></div>
+            <!-- Event-Listener-Test-Button -->
+            <button id="Event">Click here!</button>
+            <br>
+            <!-- scroll to top button -->
+            
         <button id="scrolltop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><i
                 class="fa-solid fa-arrow-up"></i> Scroll to Top</button>
 

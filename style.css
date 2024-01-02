@@ -32,9 +32,10 @@ p {
 
 #catImage {
   justify-self: center;
-  max-width: 90%;
+  max-width: 75%;
   display: block;
-  margin: 0 auto; /* Add this line to center the image */
+  margin: 0 auto;
+  height: 500px;
 }
 #colorButton:hover {
   cursor: pointer;
